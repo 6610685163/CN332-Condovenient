@@ -21,5 +21,5 @@
 ---
 
 ## Presentation
-1. https://www.canva.com/design/DAG-FyNWblo/KSPcRCW-9swMahayyfepog/edit?utm_content=DAG-FyNWblo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-2. https://www.canva.com/design/DAG-sJReu-w/s7r1J4PD1ZypmKtp5-6Fpg/edit?utm_content=DAG-sJReu-w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+1. [Presentation Slide for Week 1](https://www.canva.com/design/DAG-FyNWblo/KSPcRCW-9swMahayyfepog/edit?utm_content=DAG-FyNWblo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+2. [Presentation Slide for Week 2](https://www.canva.com/design/DAG-sJReu-w/s7r1J4PD1ZypmKtp5-6Fpg/edit?utm_content=DAG-sJReu-w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
