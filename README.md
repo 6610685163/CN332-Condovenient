@@ -21,6 +21,6 @@
 ---
 
 ## Presentation
-1. [Presentation Slide for Week 1](https://www.canva.com/design/DAG-FyNWblo/KSPcRCW-9swMahayyfepog/edit?utm_content=DAG-FyNWblo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-2. [Presentation Slide for Week 2](https://www.canva.com/design/DAG-sJReu-w/s7r1J4PD1ZypmKtp5-6Fpg/edit?utm_content=DAG-sJReu-w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-3. [Presentation Slide for Week 3](https://www.canva.com/design/DAG_Vas4B1w/d7-3nS9RwaleQXfKnM3dsw/edit?utm_content=DAG_Vas4B1w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+1. [Presentation Slide for Week 1](https://www.canva.com/design/DAG-FyNWblo/xobZmQE7eSjgWgb1FErsow/view?utm_content=DAG-FyNWblo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hba639e7e36)
+2. [Presentation Slide for Week 2](https://www.canva.com/design/DAG-sJReu-w/c7vReubB-wnkl7ztFojcKg/view?utm_content=DAG-sJReu-w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfebb2a9807)
+3. [Presentation Slide for Week 3](https://www.canva.com/design/DAG_Vas4B1w/AGDJbdiOHehSkkot4NmS4w/view?utm_content=DAG_Vas4B1w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h012e3aefa6)
