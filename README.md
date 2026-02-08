@@ -138,4 +138,4 @@
 
 ---
 
-> 📘 *Condovenient – Smart Management for Smart Communities*
+> *Condovenient – Smart Management for Smart Communities*
