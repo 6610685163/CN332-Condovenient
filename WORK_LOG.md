@@ -52,7 +52,7 @@
 | 2026-01-18 | Database | ออกแบบ schema ตาราง maintenance | PostgreSQL | Done |
 | 2026-01-31 | USE CASE DIAGRAM | ออกแบบ USE CASE DIAGRAM | Canva | Done |
 | 2026-01-31 | CLI | แก้ไขปรับปรุง CLI | Python, VS Code | Done |
-| 2026-02-08 | | mapping | ทบทวนด้วยการ mapping | Canva | Done |
+| 2026-02-08 | mapping | ทบทวนด้วยการ mapping | Canva | Done |
 
 
 ### Name: เสฎฐพัชร ญาณพัฒน์สร
