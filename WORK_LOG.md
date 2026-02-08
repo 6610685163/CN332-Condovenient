@@ -60,5 +60,5 @@
 |------|------|------------|-------------|--------|
 | 2026-01-11 | Features | ออกแบบ Features ของระบบ | Canva | ✅ Done |
 | 2026-01-18 | แจกแจง requirement | แจกแจง requirement ของระบบพัสดุ| canva | ✅ Done |
-| 2026-01-24 | CLASS DIAGRAM | ออกแบบ CLASS DIAGRAM | visual-paradigm.com | ✅ Done |ฃ
+| 2026-01-24 | CLASS DIAGRAM | ออกแบบ CLASS DIAGRAM | visual-paradigm.com | ✅ Done |
 | 2026-01-30 | GUI | ออกแบบ GUI | figma | ✅ Done |
