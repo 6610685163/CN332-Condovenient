@@ -62,3 +62,4 @@
 | 2026-01-18 | แจกแจง requirement | แจกแจง requirement ของระบบพัสดุ| canva | ✅ Done |
 | 2026-01-24 | CLASS DIAGRAM | ออกแบบ CLASS DIAGRAM | visual-paradigm.com | ✅ Done |
 | 2026-01-30 | GUI | ออกแบบ GUI | figma | ✅ Done |
+| 2026-02-8  | demo app | ออกแบบทำ app demo | flutter | ✅ Done |
