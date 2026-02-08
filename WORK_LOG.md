@@ -14,7 +14,7 @@
 
 ### 👤 Name: กันตพงศ์ วิชชุเกรียงไกร
 **Student ID:** 6610625045  
-**Role:** เช่น Backend / Frontend / AI / Documentation
+**Role:**
 
 | Date | Task | Description | Tools / Tech | Status |
 |------|------|------------|-------------|--------|
@@ -24,7 +24,7 @@
 
 ### 👤 Name: ฉัตรชัย สีคราม
 **Student ID:** 6610685064  
-**Role:** เช่น Backend / Frontend / AI / Documentation
+**Role:**
 
 | Date | Task | Description | Tools / Tech | Status |
 |------|------|------------|-------------|--------|
@@ -34,7 +34,7 @@
 
 ### 👤 Name: ชิติพัทธ์ ตากตำรงค์กุล
 **Student ID:** 6610685130  
-**Role:** เช่น Backend / Frontend / AI / Documentation
+**Role:**
 
 | Date | Task | Description | Tools / Tech | Status |
 |------|------|------------|-------------|--------|
@@ -44,7 +44,7 @@
 
 ### 👤 Name: ธนบดี สุดแดน
 **Student ID:** 6610685163  
-**Role:** เช่น Backend / Frontend / AI / Documentation
+**Role:**
 
 | Date | Task | Description | Tools / Tech | Status |
 |------|------|------------|-------------|--------|
@@ -54,7 +54,7 @@
 
 ### 👤 Name: เสฎฐพัชร ญาณพัฒน์สร
 **Student ID:** 6610685361  
-**Role:** เช่น Backend / Frontend / AI / Documentation
+**Role:**
 
 | Date | Task | Description | Tools / Tech | Status |
 |------|------|------------|-------------|--------|
