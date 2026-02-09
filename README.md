@@ -134,7 +134,7 @@
 | 6610685064 | ฉัตรชัย สีคราม             | Backend Developer |
 | 6610685130 | ชิติพัทธ์ ตากตำรงค์กุล       | Project Manager & Frontend Developer |
 | 6610685163 | ธนบดี สุดแดน             | Backend Developer |
-| 6610685361 | เสฎฐพัชร ญาณพัฒน์สร      | Backend Developer |
+| 6610685361 | เสฎฐพัชร ญาณพัฒน์สร      | Backend & Database Engineer |
 
 ---
 
