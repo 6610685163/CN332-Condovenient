@@ -138,4 +138,18 @@
 
 ---
 
+## Presentation
+
+1. [Presentation Slide for Week 1 Concept Paper](https://www.canva.com/design/DAG-FyNWblo/xobZmQE7eSjgWgb1FErsow/view?utm_content=DAG-FyNWblo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hba639e7e36)
+2. [Presentation Slide for Week 2 Requirments](https://www.canva.com/design/DAG-sJReu-w/c7vReubB-wnkl7ztFojcKg/view?utm_content=DAG-sJReu-w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfebb2a9807)
+3. [Presentation Slide for Week 3 Class Diagram & Use Case Diagram](https://www.canva.com/design/DAG_Vas4B1w/AGDJbdiOHehSkkot4NmS4w/view?utm_content=DAG_Vas4B1w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h012e3aefa6)
+4. [Presentation Slide for Week 4 GUI & CLI](https://www.canva.com/design/DAG_5phXnt4/Bjl36ShquvO2duLYC4grOg/view?utm_content=DAG_5phXnt4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h79ed3928ff)
+5. [Presentation Slide for Week 5 Mapping & Facade](https://www.canva.com/design/DAHAqaXcgHg/TXma4wYU04RRrjVmf9jwjQ/view?utm_content=DAHAqaXcgHg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb8cfb31952)
+
+---
+
+## Presentation History
+
+- 2 Febuary 2026 
+
 > *Condovenient – Smart Management for Smart Communities*
