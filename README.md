@@ -150,6 +150,6 @@
 
 ## Presentation History
 
-- February 2, 2026 (Presentation Slide 1 - 5)
+- February 2, 2026 (Presentation Slide 1 - 4)
 
 > *Condovenient – Smart Management for Smart Communities*
