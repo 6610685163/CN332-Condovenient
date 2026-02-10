@@ -56,7 +56,7 @@
 | 2026-01-31 | USE CASE DIAGRAM | ออกแบบ USE CASE DIAGRAM | Canva | Done |
 | 2026-01-31 | CLI | แก้ไขปรับปรุง CLI | Python, VS Code | Done |
 | 2026-02-08 | mapping | ทบทวนด้วยการ mapping | Canva | Done |
-| 2026-02-11 | Login & Register (backend) | ทำระบบ login | Node.js, Express.js, PostgreSQL, Postman | Done |
+| 2026-02-11 | Login & Register (backend) | ทำระบบ login | Node.js, Express, PostgreSQL, Postman | Done |
 
 
 ### Name: เสฎฐพัชร ญาณพัฒน์สร
