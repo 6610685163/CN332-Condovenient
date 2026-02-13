@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'home_screen.dart'; // ห้ามลืมบรรทัดนี้ ไม่งั้นจะหา HomeScreen ไม่เจอ
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -62,6 +63,18 @@ class _LoginScreenState extends State<LoginScreen> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('ยินดีต้อนรับคุณ ${data['user']['name']}')),
           );
+
+          // --- จุดที่แก้ไข: ส่งชื่อ User ไปหน้า Home ---
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeScreen(
+                userName: data['user']['name'] ?? 'User',
+                userRole: data['user']['role'] ?? 'Resident',
+              ),
+            ),
+          );
+          // ------------------------------------------
         }
       } else {
         // Login ไม่ผ่าน (รหัสผิด หรือไม่พบผู้ใช้)
@@ -139,6 +152,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 content: Text('Google Login สำเร็จ: ${data['user']['name']}'),
               ),
             );
+
+            // --- จุดที่แก้ไข: ส่งชื่อ User ไปหน้า Home ---
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeScreen(
+                  userName: data['user']['name'] ?? 'User',
+                  userRole: data['user']['role'] ?? 'Resident',
+                ),
+              ),
+            );
+            // ------------------------------------------
           }
         } else {
           if (mounted) {
@@ -274,8 +299,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       // --- ส่วนที่เพิ่มเข้ามา: ปุ่ม Google ---
                       SizedBox(
                         width: double.infinity,
-                        height:
-                            20, // สูงเท่าเดิมตามโค้ดคุณ (แต่ปกติน่าจะ 40-50 นะครับ)
+                        height: 50, // ปรับความสูงให้เหมาะสม (50 เท่ากับปุ่มบน)
                         child: OutlinedButton(
                           onPressed: _isLoading ? null : _handleGoogleLogin,
                           style: OutlinedButton.styleFrom(
