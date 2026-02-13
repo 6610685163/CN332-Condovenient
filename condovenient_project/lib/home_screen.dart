@@ -4,6 +4,8 @@ import 'parcel_screen.dart'; // เพิ่มการ import ไฟล์ par
 import 'visitor_screen.dart'; // เพิ่มการ import ไฟล์ visitor
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
