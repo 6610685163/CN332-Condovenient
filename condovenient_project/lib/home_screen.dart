@@ -1,108 +1,286 @@
 import 'package:flutter/material.dart';
-import 'repair_screen.dart';
-import 'parcel_screen.dart'; // เพิ่มการ import ไฟล์ parcel
-import 'visitor_screen.dart'; // เพิ่มการ import ไฟล์ visitor
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0; // เอาไว้เก็บว่ากดเมนูไหนด้านล่าง
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('CondoVenient')), //
+      backgroundColor: const Color(0xFFF5F7FA), // สีพื้นหลังเทาอ่อนๆ สบายตา
+      
+      // --- ส่วน Body หลัก ---
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // ส่วนแสดงค่าส่วนกลาง (Outstanding Fee)
-            Container(
-              padding: EdgeInsets.all(20),
-              color: Colors.blue[50],
-              child: Row(
+            _buildHeaderSection(),
+            const SizedBox(height: 24),
+            _buildQuickActions(),
+            const SizedBox(height: 24),
+            _buildUnitInfo(),
+            const SizedBox(height: 24),
+            _buildRecentNotifications(),
+            const SizedBox(height: 100), // เว้นที่ด้านล่างกันตกขอบ
+          ],
+        ),
+      ),
+
+      // --- เมนูบาร์ด้านล่าง (Bottom Navigation) ---
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: (index) => setState(() => _selectedIndex = index),
+        type: BottomNavigationBarType.fixed, // แบบ Fixed เพราะมี 5 ปุ่ม
+        selectedItemColor: Colors.blue[700],
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.receipt_long), label: 'Fees'),
+          BottomNavigationBarItem(icon: Icon(Icons.build), label: 'Repair'),
+          BottomNavigationBarItem(icon: Icon(Icons.inventory_2), label: 'Parcel'),
+          BottomNavigationBarItem(icon: Icon(Icons.article), label: 'News'),
+        ],
+      ),
+    );
+  }
+
+  // 1. ส่วนหัวสีฟ้า + การ์ดยอดหนี้
+  Widget _buildHeaderSection() {
+    return Stack(
+      children: [
+        // พื้นหลังสีฟ้าโค้งๆ
+        Container(
+          height: 280,
+          padding: const EdgeInsets.only(top: 60, left: 24, right: 24),
+          decoration: BoxDecoration(
+            color: Colors.blue[600],
+            borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30),
+            ),
+          ),
+          child: Column(
+            children: [
+              // แถวบนสุด (ชื่อ + ปุ่มกระดิ่ง)
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
                     children: [
-                      Text('Outstanding Common Fee'), //
-                      Text(
-                        'THB 5,250', //
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      CircleAvatar(
+                        backgroundColor: Colors.white.withOpacity(0.2),
+                        child: const Text('JD', style: TextStyle(color: Colors.white)),
+                      ),
+                      const SizedBox(width: 12),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text('Welcome back,', style: TextStyle(color: Colors.white70, fontSize: 12)),
+                          Text('John Doe', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                        ],
                       ),
                     ],
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      // ในอนาคตจะเชื่อมไปหน้า Pay Invoice
-                    },
-                    child: Text('Pay'), //
-                  ),
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {}, 
+                        icon: const Icon(Icons.notifications_outlined, color: Colors.white)
+                      ),
+                      IconButton(
+                        onPressed: () {
+                           // Logout กลับไปหน้า Login
+                           Navigator.pop(context);
+                        }, 
+                        icon: const Icon(Icons.logout, color: Colors.white)
+                      ),
+                    ],
+                  )
                 ],
               ),
-            ),
-            // เมนูหลัก (Grid Menu)
-            GridView.count(
-              shrinkWrap: true,
-              physics:
-                  NeverScrollableScrollPhysics(), // เพิ่มเพื่อให้ Scroll ลื่นไหล
-              crossAxisCount: 2,
-              padding: EdgeInsets.all(10),
+            ],
+          ),
+        ),
+
+        // การ์ดยอดเงิน (วางซ้อนทับสีฟ้า)
+        Container(
+          margin: const EdgeInsets.only(top: 130, left: 24, right: 24),
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10, offset: const Offset(0, 5)),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('Outstanding Common Fee', style: TextStyle(color: Colors.grey)),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(color: Colors.red[50], borderRadius: BorderRadius.circular(8)),
+                    child: Row(
+                      children: const [
+                        Icon(Icons.error_outline, size: 14, color: Colors.red),
+                        SizedBox(width: 4),
+                        Text('Unpaid', style: TextStyle(color: Colors.red, fontSize: 10, fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(height: 8),
+              const Text('THB 5,250', style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black87)),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('Due: Feb 15, 2026', style: TextStyle(color: Colors.grey, fontSize: 12)),
+                  TextButton(
+                    onPressed: () {}, 
+                    child: Row(
+                      children: const [
+                        Text('View Details'),
+                        Icon(Icons.chevron_right, size: 16),
+                      ],
+                    )
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  // 2. ปุ่มเมนูลัด 4 ปุ่ม
+  Widget _buildQuickActions() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('Quick Actions', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _buildActionButton(Icons.payment, 'Pay Fee', Colors.blue),
+              _buildActionButton(Icons.build_rounded, 'Repair', Colors.orange),
+              _buildActionButton(Icons.inventory_2_rounded, 'Parcel', Colors.green),
+              _buildActionButton(Icons.person_add_rounded, 'Visitor', Colors.teal),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildActionButton(IconData icon, String label, Color color) {
+    return Column(
+      children: [
+        Container(
+          width: 60, height: 60,
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.1), // สีจางๆ เป็นพื้นหลัง
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Icon(icon, color: color, size: 28),
+        ),
+        const SizedBox(height: 8),
+        Text(label, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
+      ],
+    );
+  }
+
+  // 3. ข้อมูลห้อง (Your Unit)
+  Widget _buildUnitInfo() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Colors.grey.shade200),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _menuCard(
-                  context,
-                  Icons.build,
-                  'Repair',
-                  RepairScreen(), //
-                ),
-                _menuCard(
-                  context,
-                  Icons.inventory,
-                  'Parcel',
-                  ParcelScreen(), // แก้จาก null เป็น ParcelScreen()
-                ),
-                _menuCard(
-                  context,
-                  Icons.people,
-                  'Visitor',
-                  VisitorScreen(), // แก้จาก null เป็น VisitorScreen()
-                ),
-                _menuCard(
-                  context,
-                  Icons.announcement,
-                  'News',
-                  null, //
-                ),
+                const Text('Your Unit', style: TextStyle(color: Colors.grey, fontSize: 12)),
+                const SizedBox(height: 4),
+                const Text('Building A, Unit 1234', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
               ],
             ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: BoxDecoration(color: Colors.grey[100], borderRadius: BorderRadius.circular(20)),
+              child: const Text('Owner', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black54)),
+            )
           ],
         ),
       ),
     );
   }
 
-  Widget _menuCard(
-    BuildContext context,
-    IconData icon,
-    String title,
-    Widget? page,
-  ) {
-    return InkWell(
-      onTap: () => page != null
-          ? Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => page),
-            )
-          : null,
-      child: Card(
-        elevation: 2, // เพิ่มเงาให้ดูสวยงามเหมือน GUI
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 40, color: Colors.blue),
-            SizedBox(height: 10),
-            Text(title, style: TextStyle(fontWeight: FontWeight.w500)),
-          ],
-        ),
+  // 4. รายการแจ้งเตือนล่าสุด
+  Widget _buildRecentNotifications() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text('Recent Notifications', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              TextButton(onPressed: () {}, child: const Text('View All')),
+            ],
+          ),
+          _buildNotificationItem('Common fee payment received', '2 hours ago', Colors.blue),
+          _buildNotificationItem('Your parcel has arrived at the lobby', '5 hours ago', Colors.green),
+          _buildNotificationItem('Repair request #1234 completed', 'Yesterday', Colors.grey),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildNotificationItem(String title, String time, Color dotColor) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.blue[50]!.withOpacity(0.5),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          Container(width: 8, height: 8, decoration: BoxDecoration(color: dotColor, shape: BoxShape.circle)),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14)),
+                const SizedBox(height: 4),
+                Text(time, style: const TextStyle(color: Colors.grey, fontSize: 12)),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

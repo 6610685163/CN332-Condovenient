@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,30 +30,26 @@ class _LoginScreenState extends State<LoginScreen> {
     await Future.delayed(const Duration(seconds: 2));
 
     if (mounted) {
-      setState(() {
-        _isLoading = false;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('ยินดีต้อนรับสู่ Condovenient!')),
+      setState(() => _isLoading = false);
+      // เปลี่ยนหน้าไปยัง HomeScreen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
     }
   }
 
   // ฟังก์ชัน Login ด้วย Google (Mock)
   void _handleGoogleLogin() async {
-    setState(() {
-      _isLoading = true;
-    });
-
-    // จำลองการเชื่อมต่อ Google
+     // ทำเหมือนข้างบนเลยครับ
+    setState(() => _isLoading = true);
     await Future.delayed(const Duration(seconds: 2));
 
     if (mounted) {
-      setState(() {
-        _isLoading = false;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('เชื่อมต่อ Google สำเร็จ!')),
+      setState(() => _isLoading = false);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
     }
   }
