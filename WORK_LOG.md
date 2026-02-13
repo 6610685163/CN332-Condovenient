@@ -57,6 +57,7 @@
 | 2026-01-31 | CLI | แก้ไขปรับปรุง CLI | Python, VS Code | Done |
 | 2026-02-08 | mapping | ทบทวนด้วยการ mapping | Canva | Done |
 | 2026-02-11 | Login & Register (backend) | ทำระบบ login | Node.js, Express, PostgreSQL, Postman | Done |
+| 2026-02-14 | Login & Register | เชื่อมระบบกับหน้าบ้าน, เพิ่มการ login ผ่าน provider อื่นๆ | Flutter, Dart, Node.js, Express, PostgreSQL, Firebase Auth | Done |
 
 
 ### Name: เสฎฐพัชร ญาณพัฒน์สร
